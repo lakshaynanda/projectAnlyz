@@ -69,7 +69,13 @@ li{
   padding: 10px;
   border-radius: 8px;
   font-weight: 600;
-  
+  box-shadow: 3px 3px 8px;
+  border:solid black 2px;
+}
+li:hover{
+  transform: translateX(-2px) translateY(-2px);
+  box-shadow: 5px 5px 16px;
+  transition: 1s;
 }
 .heading{
   text-align: center;
