@@ -3,6 +3,7 @@ import Nav from './components/Nav';
 import LoginForm from './components/LoginForm';
 import SignupForm from './components/SignupForm';
 import './App.css';
+import ChangePass from './components/ChangePass';
 
 class App extends Component {
   constructor(props) {
@@ -87,6 +88,9 @@ class App extends Component {
         break;
       case 'signup':
         form = <SignupForm handle_signup={this.handle_signup} />;
+        break;
+      case 'changepass':
+        form = <ChangePass handle_login={this.handle_login} />;
         break;
       default:
         form = null;

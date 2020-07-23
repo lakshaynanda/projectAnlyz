@@ -6,7 +6,7 @@ function Nav(props) {
     <ul>
       <li class="item" onClick={() => props.display_form('login')}>Login</li>
       <li class="item" onClick={() => props.display_form('signup')}>Signup</li>
-      <li class="item" onClick={() => props.display_form('signup')}>Settings</li>
+      <li class="item" onClick={() => props.display_form('changepass')}>Change Pass</li>
     </ul>
   );
 

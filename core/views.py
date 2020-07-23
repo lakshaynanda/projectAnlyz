@@ -9,23 +9,13 @@ from .serializers import UserSerializer, UserSerializerWithToken
 # Create your views here.
 
 @api_view(['GET'])
-def current_user(request):
-    """
-    Determine the current user by their token, and return their data
-    """
-    
+def current_user(request): 
     serializer = UserSerializer(request.user)
     return Response(serializer.data)
 
 
-class UserList(APIView):
-    """
-    Create a new user. It's called 'UserList' because normally we'd have a get
-    method here too, for retrieving a list of all User objects.
-    """
-
+class UserList(APIView): 
     permission_classes = (permissions.AllowAny,)
-
     def post(self, request, format=None):
         serializer = UserSerializerWithToken(data=request.data)
         if serializer.is_valid():

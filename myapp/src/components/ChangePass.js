@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-class SignupForm extends React.Component {
+class ChangePass extends React.Component {
   state = {
     username: '',
     password: ''
@@ -19,9 +19,9 @@ class SignupForm extends React.Component {
 
   render() {
     return (
-    <div class="mainForm">
-        <form onSubmit={e => this.props.handle_signup(e, this.state)}>
-            <h4 class="heading">Sign Up</h4>
+      <div class="mainForm">
+        <form onSubmit={e => this.props.handle_login(e, this.state)}>
+            <h4 class="heading">Change Password</h4>
             <label htmlFor="username">Username</label>
             <input
             type="text"
@@ -30,23 +30,33 @@ class SignupForm extends React.Component {
             value={this.state.username}
             onChange={this.handle_change}
             />
-            <label htmlFor="password">Password</label>
+            <label htmlFor="password">Old Password</label>
             <input
             type="password"
             name="password"
-            placeholder="Password"
+            placeholder="Old Password"
             value={this.state.password}
             onChange={this.handle_change}
             />
-            <input type="submit" />
+            <label htmlFor="password">New Password</label>
+            <input
+            type="password"
+            name="password1"
+            placeholder="New Password"
+            value={this.state.password}
+            onChange={this.handle_change}
+            />
+            <div class="wrapp">
+                <input type="submit" class="but"/>
+            </div>
         </form>
       </div>
     );
   }
 }
 
-export default SignupForm;
+export default ChangePass;
 
-SignupForm.propTypes = {
-  handle_signup: PropTypes.func.isRequired
+ChangePass.propTypes = {
+  handle_changepass: PropTypes.func.isRequired
 };
