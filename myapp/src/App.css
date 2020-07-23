@@ -19,10 +19,6 @@ input {
     animation: App-logo-spin infinite 20s linear;
   }
 }
-.item:hover{
-  color:rgb(0, 0, 0);
-  cursor: pointer;
-}
 .App-header {
   background-color: #282c34;
   min-height: 100vh;
@@ -46,6 +42,7 @@ input {
     transform: rotate(360deg);
   }
 }
+
 input[type=submit] {
   background-color: rgb(247, 237, 97);
   padding: 14px 20px;
@@ -76,6 +73,8 @@ li:hover{
   transform: translateX(-2px) translateY(-2px);
   box-shadow: 5px 5px 16px;
   transition: 1s;
+  color:rgb(0, 0, 0);
+  cursor: pointer;
 }
 .heading{
   text-align: center;

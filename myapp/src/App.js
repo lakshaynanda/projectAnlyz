@@ -48,6 +48,25 @@ class App extends Component {
         });
       });
   };
+  handle_changepass = (e, data) => {
+    e.preventDefault();
+    fetch('http://localhost:8000/token-auth/password/change/',{
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify(data)
+    })
+      .then(res => res.json())
+      .then(json => {
+        localStorage.setItem('token', json.token);
+        this.setState({
+          logged_in: false,
+          displayed_form: '',
+          username: json.user.username,
+        });
+      });
+  };
 
   handle_signup = (e, data) => {
     e.preventDefault();
@@ -62,7 +81,7 @@ class App extends Component {
       .then(json => {
         localStorage.setItem('token', json.token);
         this.setState({
-          logged_in: true,
+          logged_in: false,
           displayed_form: '',
           username: json.username
         });
@@ -104,7 +123,7 @@ class App extends Component {
           handle_logout={this.handle_logout}
         />
         {form}
-        <h3 class="heading2">
+        <h3 className="heading2">
           {this.state.logged_in
             ? `Hello, ${this.state.username}`
             : 'Please Sign Up if you are new to this Web Page else Sign In'}
